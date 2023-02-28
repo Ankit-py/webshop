@@ -8,7 +8,7 @@ const Header = () => {
         Web<span className="text-[#9400D3]">S</span>hop
       </div>
       {/* Search Bar Starts */}
-      <div className="flex">
+      <div className="hidden sm:flex">
         <input
           type="text"
           className="m-3 bg-transparent border border-black rounded-lg w-80 p-1 text-black"
