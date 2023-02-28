@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Header from '../components/Header';
 import Slides from '../components/Slides';
+import Products from '../components/Products';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       </Head>
       <Header />
       <Slides />
+      <Products />
     </>
   )
 }
