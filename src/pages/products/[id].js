@@ -10,7 +10,7 @@ const Product = ({ product }) => {
     <div>
       <Header />
 
-      <section className="py-10 font-poppins border border-black m-4 rounded-lg">
+      <section className="py-10 font-poppins border border-black m-4 lg:m-12 rounded-lg">
         <div className="max-w-6xl px-4 mx-auto">
           <div className="flex flex-wrap mb-6 -mx-4">
             <div className="w-full px-4 mb-8 md:w-1/2 md:mb-0">
