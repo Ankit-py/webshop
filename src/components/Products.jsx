@@ -36,9 +36,9 @@ const Products = () => {
               xmlns="http://www.w3.org/2000/svg"
               stroke="#000"
             >
-              <g fill="none" fill-rule="evenodd">
-                <g transform="translate(1 1)" stroke-width="2">
-                  <circle stroke-opacity=".5" cx="18" cy="18" r="18" />
+              <g fill="none" fillRule="evenodd">
+                <g transform="translate(1 1)" strokeWidth="2">
+                  <circle strokeOpacity=".5" cx="18" cy="18" r="18" />
                   <path d="M36 18c0-9.94-8.06-18-18-18">
                     <animateTransform
                       attributeName="transform"
@@ -102,7 +102,7 @@ const Products = () => {
                 {filter.map((product) => (
                   <div
                     className="w-full rounded-lg shadow-md lg:max-w-sm mx-2 mb-2 p-3 border border-black bg-white shadow-xl"
-                    key={product}
+                    key={product.id}
                   >
                     <Link href={`/products/${product.id}`}>
                       <Image
@@ -124,15 +124,17 @@ const Products = () => {
                         ₹{product.price}
                       </p>
 
-                      <div class="flex flex-wrap items-center mb-6 mt-6 justify-center">
-                        <div class="mb-4 lg:mb-0">
-                          <button class="flex items-center justify-center w-full h-12 p-2 mr-4 text-gray-700 border border-black lg:w-11 hover:text-gray-50 hover:bg-[#9400D3] rounded-lg hover:border-blue-600">
+                      <div className="flex flex-wrap items-center mb-6 mt-6 justify-center">
+                        <div className="mb-4 lg:mb-0">
+                          <button
+                          onClick={() => addToWishlist(product.id)} 
+                          className="flex items-center justify-center w-full h-12 p-2 mr-4 text-gray-700 border border-black lg:w-11 hover:text-gray-50 hover:bg-[#9400D3] rounded-lg hover:border-blue-600">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="16"
                               height="16"
                               fill="currentColor"
-                              class=" bi bi-heart"
+                              className=" bi bi-heart"
                               viewBox="0 0 16 16"
                             >
                               <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
@@ -140,7 +142,8 @@ const Products = () => {
                           </button>
                         </div>
                         <button
-                          class="w-full px-4 py-3 text-center text-black bg-transparent border border-black hover:bg-[#9400D3] hover:text-gray-100 lg:w-1/2 rounded-xl"
+                          onClick={()=> addToCart(product.id)}
+                          className="w-full px-4 py-3 text-center text-black bg-transparent border border-black hover:bg-[#9400D3] hover:text-gray-100 lg:w-1/2 rounded-xl"
                         >
                           {" "}
                           Add to cart{" "}
