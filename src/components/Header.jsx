@@ -1,17 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const Header = () => {
+  const [color, setColor] = useState(false);
+
+  function changeColor() {
+    if (window.scrollY >= 90) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeColor);
+    return () => {
+      window.removeEventListener("scroll", changeColor);
+    };
+  }, []);
+
   return (
-    <nav className="w-full bg-[#ffffff40] flex justify-between">
+    <nav
+      className={
+        color
+          ? "w-full flex justify-between sticky top-0 z-50 bg-white"
+          : "w-full flex justify-between sticky top-0 z-50 bg-[#00000020]"
+      }
+    >
       <div className="text-2xl font-bold p-4">
-        Web<span className="text-[#9400D3]">S</span>hop
+        <Link href="/">
+          Web<span className="text-[#9400D3]">S</span>hop
+        </Link>
       </div>
       {/* Search Bar Starts */}
       <div className="hidden sm:flex">
         <input
           type="text"
-          className="m-3 bg-transparent border border-black rounded-lg w-80 p-1 text-black"
+          className="m-3 bg-transparent border border-black shadow-lg rounded-lg w-80 p-1 text-black"
           placeholder="Search"
         />
         <div className="mt-3 hover:text-[#9400D3]">

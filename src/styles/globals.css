@@ -4,5 +4,6 @@
 
 :root {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(90deg, rgba(189, 164, 205, 1) 0%, rgba(255, 191, 191, 1) 50%, rgba(236, 211, 176, 1) 100%);
+    /* background: linear-gradient(90deg, rgba(189, 164, 205, 1) 0%, rgba(255, 191, 191, 1) 50%, rgba(236, 211, 176, 1) 100%); */
+    background: white;
 }
