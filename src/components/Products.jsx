@@ -6,6 +6,7 @@ const Products = () => {
     const [ data, setData ] = useState([]);
     const [ filter, setFilter ] = useState(data);
     const [ loading, setLoading ] = useState(false);
+
     let componentMounted = true;
 
     useEffect(() => {
@@ -104,28 +105,45 @@ const Products = () => {
                     key={product}
                   >
                     <Link href={`/products/${product.id}`}>
-                        <Image
-                          className="object-contain w-full h-80"
-                          src={product.image}
-                          alt={product.title}
-                          width={100}
-                          height={250}
-                        />
+                      <Image
+                        className="object-contain w-full h-80"
+                        src={product.image}
+                        alt={product.title}
+                        width={250}
+                        height={250}
+                      />
                     </Link>
-
                     <div className="p-4">
-                      <h4 className="text-xl text-black">
+                      <h4 className="text-xl text-black border-b border-black mb-3">
                         {product.title.substring(0, 12)}
                       </h4>
+                      <p className="mb-2 leading-normal text-[#808080]">
+                        {product.description.substring(0, 60)}
+                      </p>
                       <p className="mb-2 leading-normal font-bold">
                         ₹{product.price}
                       </p>
-                      <div className="flex mx-4">
-                        <button className="p-2 text-sm shadow-lg border border-black rounded-lg font-semibold mx-2 mb-2 hover:text-white hover:bg-black">
-                          Add to Cart
-                        </button>
-                        <button className="p-2 border text-sm shadow-lg border-black rounded-lg font-semibold mx-2 mb-2 hover:text-white hover:bg-black">
-                          Add to Wishlist
+
+                      <div class="flex flex-wrap items-center mb-6 mt-6 justify-center">
+                        <div class="mb-4 lg:mb-0">
+                          <button class="flex items-center justify-center w-full h-12 p-2 mr-4 text-gray-700 border border-black lg:w-11 hover:text-gray-50 hover:bg-[#9400D3] rounded-lg hover:border-blue-600">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              fill="currentColor"
+                              class=" bi bi-heart"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
+                            </svg>
+                          </button>
+                        </div>
+                        <button
+                          class="w-full px-4 py-3 text-center text-black bg-transparent border border-black hover:bg-[#9400D3] hover:text-gray-100 lg:w-1/2 rounded-xl"
+                        >
+                          {" "}
+                          Add to cart{" "}
                         </button>
                       </div>
                     </div>

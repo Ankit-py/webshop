@@ -11,29 +11,29 @@ export default function Slides() {
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
           <SwiperSlide>
             <Image
-              className="object-fill w-full h-96"
-              src="https://i.ibb.co/F3Jn8Tm/Wallpaper.jpg"
+              className="object-cover w-full h-96"
+              src="https://i.ibb.co/vsNYVX0/2103760.jpg"
               alt="image slide 1"
-              width="100"
-              height="100"
+              width="1200"
+              height="1200"
             />
           </SwiperSlide>
           <SwiperSlide>
             <Image
-              className="object-fill w-full h-96"
-              src="https://i.ibb.co/F3Jn8Tm/Wallpaper.jpg"
+              className="object-cover w-full h-96"
+              src="https://i.ibb.co/sy3dwjc/image2.jpg"
               alt="image slide 2"
-              width="100"
-              height="100"
+              width="1200"
+              height="1200"
             />
           </SwiperSlide>
           <SwiperSlide>
             <Image
-              className="object-fill w-full h-96"
-              src="https://i.ibb.co/F3Jn8Tm/Wallpaper.jpg"
+              className="object-cover w-full h-96"
+              src="https://i.ibb.co/gjJdHvS/image3.jpg"
               alt="image slide 3"
-              width="100"
-              height="100"
+              width="1200"
+              height="1200"
             />
           </SwiperSlide>
         </Swiper>
