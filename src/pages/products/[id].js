@@ -1,13 +1,18 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Header from "../../components/Header";
+import Head from "next/head";
 
 const Product = ({ product }) => {
   const router = useRouter();
   const { id } = router.query;
 
   return (
-    <div>
+    <div>  
+      <Head>
+        <title>{product.title}</title>
+      </Head>
+
       <Header />
 
       <section className="py-10 font-poppins border border-black m-4 lg:m-12 rounded-lg">
@@ -107,7 +112,7 @@ const Product = ({ product }) => {
                 <div className="mb-6 "></div>
                 <div className="flex flex-wrap items-center mb-6">
                   <div className="mb-4 lg:mb-0">
-                    <button className="flex items-center justify-center w-full h-12 p-2 mr-4 text-gray-700 border border-black lg:w-11 hover:text-gray-50 hover:bg-[#9400D3] rounded-lg hover:border-blue-600">
+                    <button className="flex items-center justify-center w-full h-12 p-2 mr-4 text-gray-700 border border-black lg:w-11 hover:text-gray-50 hover:bg-[#9400D3] rounded-lg">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"

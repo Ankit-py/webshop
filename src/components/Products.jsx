@@ -1,8 +1,14 @@
 import React, { useState, useEffect} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useDispatch } from 'react-redux';
+import { addToCart } from 'redux/cart.slice';
+
 
 const Products = () => {
+
+    const dispatch  = useDispatch();
+
     const [ data, setData ] = useState([]);
     const [ filter, setFilter ] = useState(data);
     const [ loading, setLoading ] = useState(false);
@@ -142,7 +148,7 @@ const Products = () => {
                           </button>
                         </div>
                         <button
-                          onClick={()=> addToCart(product.id)}
+                          onClick={()=> dispatch(addToCart(product))}
                           className="w-full px-4 py-3 text-center text-black bg-transparent border border-black hover:bg-[#9400D3] hover:text-gray-100 lg:w-1/2 rounded-xl"
                         >
                           {" "}
