@@ -39,7 +39,7 @@ const Products = () => {
 
     const Loading = () => {
         return (
-          <div className=' flex items-center justify-center'>
+          <div className='flex items-center justify-center'>
             <svg
               width="38"
               height="38"
@@ -109,7 +109,7 @@ const Products = () => {
             </div>
 
             <>
-              <div className="grid gap-4 lg:grid-cols-4 m-4 p-4 ml-0 lg:ml-12">
+              <div className="cards p-10 grid gap-10 md:grid-cols-2 lg:grid-cols-4 w-full mx-auto max-w-7xl">
                 {filter.map((product) => (
                   <div
                     className="w-full rounded-lg shadow-md lg:max-w-sm mx-2 mb-2 p-3 border border-black bg-white shadow-xl"
@@ -138,8 +138,9 @@ const Products = () => {
                       <div className="flex flex-wrap items-center mb-6 mt-6 justify-center">
                         <div className="mb-4 lg:mb-0">
                           <button
-                          onClick={() => handleAddToWishlist(product)} 
-                          className="flex items-center justify-center w-full h-12 p-2 mr-4 text-gray-700 border border-black lg:w-11 hover:text-gray-50 hover:bg-[#9400D3] rounded-lg hover:border-blue-600">
+                            onClick={() => handleAddToWishlist(product)}
+                            className="flex items-center justify-center w-full h-12 p-2 mr-4 text-gray-700 border border-black lg:w-11 hover:text-gray-50 hover:bg-[#9400D3] rounded-lg"
+                          >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="16"
@@ -153,11 +154,10 @@ const Products = () => {
                           </button>
                         </div>
                         <button
-                          onClick={()=> dispatch(addToCart(product))}
-                          className="w-full px-4 py-3 text-center text-black bg-transparent border border-black hover:bg-[#9400D3] hover:text-gray-100 lg:w-1/2 rounded-xl"
+                          onClick={() => dispatch(addToCart(product))}
+                          className="w-full px-3 py-3 text-center text-black bg-transparent border border-black hover:bg-[#9400D3] hover:text-gray-100 lg:w-1/2 rounded-xl"
                         >
-                          {" "}
-                          Add to cart{" "}
+                          Add to cart
                         </button>
                       </div>
                     </div>
@@ -178,7 +178,7 @@ const Products = () => {
                     <h1 className='font-semibold text-2xl text-center'>Trending Products</h1>
                 </div>
             </div>
-            <div className='row justify-center align-center text-center'>
+            <div className='flex flex-wrap justify-center align-center text-center m-4 p-4'>
                 {loading ? <Loading /> : <ShowProducts />}
             </div>
         </div>

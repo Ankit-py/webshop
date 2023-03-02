@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import Head from "next/head";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../redux/cart.slice";
-
+import { addToWishlist } from "../../../redux/wishlist.slice";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
@@ -114,7 +114,9 @@ const Product = ({ product }) => {
                 <div className="mb-6 "></div>
                 <div className="flex flex-wrap items-center mb-6">
                   <div className="mb-4 lg:mb-0">
-                    <button className="flex items-center justify-center w-full h-12 p-2 mr-4 text-gray-700 border border-black lg:w-11 hover:text-gray-50 hover:bg-[#9400D3] rounded-lg">
+                    <button 
+                    onClick={()=> dispatch(addToWishlist(product))}
+                    className="flex items-center justify-center w-full h-12 p-2 mr-4 text-gray-700 border border-black lg:w-11 hover:text-gray-50 hover:bg-[#9400D3] rounded-lg">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
