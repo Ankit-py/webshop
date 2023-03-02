@@ -35,7 +35,7 @@ const Header = () => {
     <nav
       className={
         color
-          ? "w-full flex justify-between sticky top-0 z-50 bg-white"
+          ? "w-full flex justify-between sticky top-0 z-50 bg-white shadow-lg"
           : "w-full flex justify-between sticky top-0 z-50 bg-[#00000020]"
       }
     >

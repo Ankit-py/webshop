@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Header from "@/components/Header";
-// import store from "../../redux/store";
+import Footer from "@/components/Footer";
 import { Provider } from "react-redux";
 import { wishlistReducer } from "../../redux/wishlist.slice";
 import { configureStore } from "@reduxjs/toolkit";
@@ -23,6 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <div>
         <Header />
         <Component {...pageProps} />
+        <Footer />
       </div>
     </Provider>
   );
