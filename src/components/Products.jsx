@@ -3,11 +3,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 import { addToCart } from 'redux/cart.slice';
+import { addToWishlist } from 'redux/wishlist.slice';
 
 
 const Products = () => {
 
     const dispatch  = useDispatch();
+
+    function handleAddToWishlist(product) {
+      dispatch(addToWishlist(product));
+    }
 
     const [ data, setData ] = useState([]);
     const [ filter, setFilter ] = useState(data);
@@ -133,7 +138,7 @@ const Products = () => {
                       <div className="flex flex-wrap items-center mb-6 mt-6 justify-center">
                         <div className="mb-4 lg:mb-0">
                           <button
-                          onClick={() => addToWishlist(product.id)} 
+                          onClick={() => handleAddToWishlist(product)} 
                           className="flex items-center justify-center w-full h-12 p-2 mr-4 text-gray-700 border border-black lg:w-11 hover:text-gray-50 hover:bg-[#9400D3] rounded-lg hover:border-blue-600">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"

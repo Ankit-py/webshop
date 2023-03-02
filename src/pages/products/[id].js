@@ -2,8 +2,12 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Header from "../../components/Header";
 import Head from "next/head";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../../redux/cart.slice";
+
 
 const Product = ({ product }) => {
+  const dispatch = useDispatch();
   const router = useRouter();
   const { id } = router.query;
 
@@ -12,8 +16,6 @@ const Product = ({ product }) => {
       <Head>
         <title>{product.title}</title>
       </Head>
-
-      <Header />
 
       <section className="py-10 font-poppins border border-black m-4 lg:m-12 rounded-lg">
         <div className="max-w-6xl px-4 mx-auto">
@@ -125,13 +127,13 @@ const Product = ({ product }) => {
                       </svg>
                     </button>
                   </div>
-                  <a
-                    href="#"
+                  <button
+                    onClick={()=> dispatch(addToCart(product))}
                     className="w-full px-4 py-3 text-center text-black bg-transparent border border-black hover:bg-[#9400D3] hover:text-gray-100 lg:w-1/2 rounded-xl"
                   >
                     {" "}
                     Add to cart{" "}
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
