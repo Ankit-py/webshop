@@ -9,7 +9,7 @@ SwiperCore.use([Navigation, Autoplay]);
 
 export default function Slides() {
   return (
-    <div className="m-4 p-4 border border-black rounded-lg">
+    <div className="m-6 mb-10 p-4 border border-black rounded-lg">
       <Swiper
         navigation={{ clickable: true }}
         autoplay={{ delay: 3000 }}

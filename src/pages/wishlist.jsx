@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromWishlist } from "../../redux/wishlist.slice";
-import { addToCart } from "../../redux/cart.slice";
+import Head from "next/head";
 
 const WishlistPage = () => {
   const wishlist = useSelector((state) => state.wishlist);
@@ -16,8 +16,11 @@ const WishlistPage = () => {
 
   return (
     <div className="m-4 lg:m-12">
+      <Head>
+        <title>WebShop | Cart</title>
+      </Head>
       {wishlist.length === 0 ? (
-        <h1 className="text-3xl font-bold text-center justify-center mt-6">
+        <h1 className="text-3xl font-bold text-center justify-center mt-20 mb-64">
           Your Wishlist is Empty!
         </h1>
       ) : (
@@ -47,7 +50,7 @@ const WishlistPage = () => {
                         <span className="text-[#808080] text-sm">
                           {item.description.substring(0, 80)}
                         </span>
-                        <div className="flex-inline flex-wrap">
+                        <div className="flex-inline flex-wrap mt-6">
                           <button
                             onClick={() =>
                               dispatch(removeFromWishlist(item.id))

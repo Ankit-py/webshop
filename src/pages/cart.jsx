@@ -5,6 +5,7 @@ import {
   decrementQuantity,
   removeFromCart,
 } from '../../redux/cart.slice';
+import Head from "next/head";
 
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
@@ -18,9 +19,12 @@ const CartPage = () => {
   };
 
   return (
-    <div className="">
+    <div>
+      <Head>
+        <title>WebShop | Cart</title>
+      </Head>
       {cart.length === 0 ? (
-        <h1 className="text-3xl font-bold text-center justify-center mt-6">Your Cart is Empty!</h1>
+        <h1 className="text-3xl font-bold mb-64 mt-20 text-center justify-center">Your Cart is Empty!</h1>
       ) : (
         <>
           <div className="container m-4 lg:m-12">

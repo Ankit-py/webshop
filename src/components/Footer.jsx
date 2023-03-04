@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Footer = () => {
   return (
     <div className="bg-black text-white pt-12 pb-8 px-4">
-      <div className="mx-auto px-4 conatiner overflow-hidden flex-col lg:flex-row justify-between">
+      <div className=" mx-auto px-4 conatiner overflow-hidden flex-col lg:flex-row justify-between">
         <Link href="/" className="block mr-4 w-1/3">
           <h1 className="text-3xl">
             Web<span className="text-[#9400D3]">S</span>hop
