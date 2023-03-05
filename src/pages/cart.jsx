@@ -4,7 +4,7 @@ import {
   incrementQuantity,
   decrementQuantity,
   removeFromCart,
-} from '../../redux/cart.slice';
+} from "../../redux/cart.slice";
 import Head from "next/head";
 
 const CartPage = () => {
@@ -24,90 +24,105 @@ const CartPage = () => {
         <title>WebShop | Cart</title>
       </Head>
       {cart.length === 0 ? (
-        <h1 className="text-3xl font-bold mb-64 mt-20 text-center justify-center">Your Cart is Empty !!!</h1>
+        <h1 className="text-3xl font-bold mb-64 mt-20 text-center justify-center h-screen">
+          Your Cart is Empty !!!
+        </h1>
       ) : (
         <>
-          <div className="container m-4 lg:m-12">
-          <div class="flex justify-between border-b pb-8">
-            <h1 class="font-semibold text-2xl">Shopping Cart</h1>
-          </div>
-          <div class="flex mt-10 mb-5">
-            <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">
-              Product Details
-            </h3>
-            <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
-              Quantity
-            </h3>
-            <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
-              Price
-            </h3>
-            <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
-              Total
-            </h3>
-          </div>
-          {cart.map((item) => (
-            <div key={item}>
-              <div class="bg-white px-10 py-10">
-                <div class="flex items-center hover:bg-white-mx-8 px-3 py-5">
-                  <div class="flex w-2/5">
-                    <div class="w-2000">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        height={200}
-                        width={200}
-                      />
-                    </div>
-                    <div class="flex flex-col justify-between ml-4 flex-grow">
-                      <span class="font-bold text-sm">{item.title}</span>
-                      <span class="text-[#808080] text-sm">
-                        {item.description.substring(0, 80)}
-                      </span>
-                      <button
-                        onClick={() => dispatch(removeFromCart(item.id))}
-                        className="hover:bg-[#9400D3] hover:text-white border border-black rounded-lg p-1 w-fit"
-                      >
-                        Remove
-                      </button>
-                    </div>
-                  </div>
-                  <div class="flex justify-center w-1/5">
-                    <button
-                      onClick={() => dispatch(incrementQuantity(item.id))}
-                    >
-                      +{" "}
-                    </button>
-
-                    <input
-                      class="mx-2 border text-center w-8"
-                      type="text"
-                      value="1"
+          <div class="bg-white pt-10">
+            <h1 class="mb-10 text-center text-2xl font-bold">Cart Items</h1>
+            <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
+              <div class="rounded-lg md:w-2/3">
+                {cart.map((item) => (
+                  <div
+                    class="justify-between mb-6 rounded-lg bg-white border border-black p-6 shadow-lg sm:flex sm:justify-start"
+                    key={item}
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      class="w-40 rounded-lg sm:w-40"
                     />
-
-                    <button
-                      onClick={() => dispatch(decrementQuantity(item.id))}
-                    >
-                      -{" "}
-                    </button>
+                    <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
+                      <div class="mt-5 sm:mt-0">
+                        <h2 class="text-lg font-bold text-gray-900">
+                          {item.title}
+                        </h2>
+                        <p class="mt-1 text-xs text-gray-700">
+                          {item.description.substring(0, 120)}...
+                        </p>
+                      </div>
+                      <div class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
+                        <div class="flex items-center border-gray-100">
+                          <button
+                            onClick={() => dispatch(decrementQuantity(item.id))}
+                            class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"
+                          >
+                            {" "}
+                            -{" "}
+                          </button>
+                          <input
+                            class="h-8 w-8 border bg-white text-center text-xs outline-none"
+                            type="number"
+                            value="1"
+                          />
+                          <button
+                            onClick={() => dispatch(incrementQuantity(item.id))}
+                            class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"
+                          >
+                            {" "}
+                            +{" "}
+                          </button>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                          <p class="text-sm">${item.price}</p>
+                          <button
+                            onClick={() => dispatch(removeFromCart(item.id))}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.5"
+                              stroke="currentColor"
+                              class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M6 18L18 6M6 6l12 12"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <span class="text-center w-1/5 font-semibold text-sm">
-                    {item.price}
-                  </span>
-                  <span class="text-center w-1/5 font-semibold text-sm">
-                    {item.price}
-                  </span>
+                ))}
+              </div>
+
+              <div class="mt-6 mb-6 h-full rounded-lg border border-black bg-white p-6 shadow-md md:mt-0 md:w-1/3">
+                <div class="mb-2 flex justify-between">
+                  <p class="text-gray-700">Subtotal</p>
+                  <p class="text-gray-700">${getTotalPrice()}</p>
                 </div>
+                <div class="flex justify-between">
+                  <p class="text-gray-700">Shipping</p>
+                  <p class="text-gray-700">$0.00</p>
+                </div>
+                <hr class="my-4" />
+                <div class="flex justify-between">
+                  <p class="text-lg font-bold">Total</p>
+                  <div class="">
+                    <p class="mb-1 text-lg font-bold">${getTotalPrice()} USD</p>
+                    <p class="text-sm text-gray-700">including VAT</p>
+                  </div>
+                </div>
+                <button class="mt-6 w-full rounded-md bg-black py-1.5 font-medium text-white hover:bg-[#9400D3]">
+                  Check out
+                </button>
               </div>
             </div>
-          ))}
-          <div className="text-center m-6">
-            <h2 className="text-xl font-bold">
-              Grand Total: $ {getTotalPrice()}
-            </h2>
-            <button className="hover:bg-[#9400D3] hover:text-white border border-black rounded-lg p-3 ml-4 w-2/5">
-              Checkout
-            </button>
-          </div>
           </div>
         </>
       )}

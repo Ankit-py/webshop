@@ -25,7 +25,7 @@ const WishlistPage = () => {
         <title>WebShop | Wishlist</title>
       </Head>
       {wishlist.length === 0 ? (
-        <h1 className="text-3xl font-bold mb-64 mt-20 text-center justify-center">
+        <h1 className="text-3xl font-bold h-screen mt-20 text-center justify-center">
           Your Wishlist is empty !!!
         </h1>
       ) : (
