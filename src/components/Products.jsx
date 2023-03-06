@@ -116,10 +116,10 @@ const Products = () => {
         </div>
 
         {/* Product Card Grid  */}
-        <section className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-10 gap-x-14 mt-10 mb-5">
+        <section className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
           {filter.map((product) => (
             <div
-              className="w-full lg:w-72 md:w-72 bg-white border border-black shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+              className="w-72 bg-white border border-black shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
               key={product.id}
             >
               <a href={`/products/${product.id}`}>
@@ -128,7 +128,7 @@ const Products = () => {
                   alt={product.title}
                   width={250}
                   height={250}
-                  className="h-80 w-full lg:w-72 md:w-72 object-contain rounded-t-xl p-4"
+                  className="h-80 w-72 object-contain rounded-t-xl p-4"
                 />
               </a>
               <div className="px-4 py-3 w-72">
