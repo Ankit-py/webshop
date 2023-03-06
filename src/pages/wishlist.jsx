@@ -22,7 +22,7 @@ const WishlistPage = () => {
   return (
     <>
       <Head>
-        <title>WebShop | Wishlist</title>
+        <title>WebShop | Your Wishlist</title>
       </Head>
       {wishlist.length === 0 ? (
         <h1 className="text-3xl font-bold h-screen mt-20 text-center justify-center">
