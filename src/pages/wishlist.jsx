@@ -45,11 +45,11 @@ const WishlistPage = () => {
               {wishlist.map((item, index) => (
                 <div
                   className="flex flex-col border border-black rounded-lg p-4"
-                  key={item}
+                  key={item.id}
                 >
                   <div className="relative">
                     <img
-                      className="block p-4"
+                      className="block p-4 h-[190px] flex mx-auto"
                       src={item.image}
                       alt={item.title}
                     />
@@ -142,7 +142,7 @@ const WishlistPage = () => {
                   >
                     <div>
                       <p className="tracking-tight text-lg text-gray-600">
-                        {item.description}
+                        {item.description.substring(0, 100)}...
                       </p>
                     </div>
                     <div className="mt-6">
