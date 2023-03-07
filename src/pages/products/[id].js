@@ -112,7 +112,7 @@ const Product = ({ product }) => {
                   </p>
                 </div>
                 <div className="mb-6 "></div>
-                <div className="flex flex-wrap items-center mb-6">
+                <div className="lg:flex sm:relative flex-wrap items-center mb-6">
                   <div className="mb-4 lg:mb-0">
                     <button 
                     onClick={()=> dispatch(addToWishlist(product))}

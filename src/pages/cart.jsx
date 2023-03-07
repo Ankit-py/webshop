@@ -48,7 +48,7 @@ const CartPage = () => {
                         <h2 class="text-lg font-bold text-gray-900">
                           {item.title}
                         </h2>
-                        <p class="mt-1 text-xs text-gray-700">
+                        <p class="mt-2 text-xs text-gray-700">
                           {item.description.substring(0, 120)}...
                         </p>
                       </div>
