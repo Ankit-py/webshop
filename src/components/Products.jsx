@@ -116,7 +116,7 @@ const Products = () => {
         </div>
 
         {/* Product Card Grid  */}
-        <section className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
+        <section className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-8 lg:gap-y-20 gap-x-14 mt-10 mb-5">
           {filter.map((product) => (
             <div
               className="w-72 bg-white border border-black shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"

@@ -1,10 +1,5 @@
-import Image from "next/image";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  incrementQuantity,
-  decrementQuantity,
-  removeFromCart,
-} from "../../redux/cart.slice";
+import { incrementQuantity, decrementQuantity, removeFromCart, } from "../../redux/cart.slice";
 import Head from "next/head";
 
 const CartPage = () => {
@@ -41,7 +36,7 @@ const CartPage = () => {
                     <img
                       src={item.image}
                       alt={item.title}
-                      class="w-40 rounded-lg sm:w-40"
+                      class="w-40 rounded-lg"
                     />
                     <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
                       <div class="mt-5 sm:mt-0">
@@ -56,7 +51,7 @@ const CartPage = () => {
                         <div class="flex items-center border-gray-100">
                           <button
                             onClick={() => dispatch(decrementQuantity(item.id))}
-                            class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"
+                            class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-[#9400D3] hover:text-blue-50"
                           >
                             {" "}
                             -{" "}
@@ -68,7 +63,7 @@ const CartPage = () => {
                           />
                           <button
                             onClick={() => dispatch(incrementQuantity(item.id))}
-                            class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"
+                            class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-[#9400D3] hover:text-blue-50"
                           >
                             {" "}
                             +{" "}
